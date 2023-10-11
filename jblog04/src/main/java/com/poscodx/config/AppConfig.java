@@ -2,13 +2,16 @@ package com.poscodx.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 
 import com.poscodx.config.app.DBConfig;
+import com.poscodx.config.app.MyBatisConfig;
 
 @Configuration
-@ComponentScan({""})
-@Import({DBConfig.class})
+@EnableAspectJAutoProxy
+@ComponentScan({"com.poscodx.jblog.service, com.poscodx.jblog.repository"})
+@Import({DBConfig.class, MyBatisConfig.class})
 public class AppConfig {
 
 }
