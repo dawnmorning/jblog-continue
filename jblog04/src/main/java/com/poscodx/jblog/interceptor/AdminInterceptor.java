@@ -15,7 +15,8 @@ public class AdminInterceptor implements HandlerInterceptor {
 		UserVo authUser = (UserVo) session.getAttribute("authUser");
 
 		if (authUser == null) {
-			response.sendRedirect("/jblog03/user/login");
+			response.sendRedirect("/jblog04");
+					
 			return false;
 		}
 

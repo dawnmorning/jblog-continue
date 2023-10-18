@@ -1,4 +1,4 @@
-package com.poscodx.config.app;
+package com.poscodx.jblog.config.app;
 
 import javax.sql.DataSource;
 
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
 @Configuration
-@PropertySource("classpath:com/poscodx/mysite/config/app/jdbc.properties")
+@PropertySource("classpath:com/poscodx/jblog/config/app/jdbc.properties")
 public class DBConfig {
 
 	@Autowired

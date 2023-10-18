@@ -13,23 +13,28 @@ import com.poscodx.jblog.vo.UserVo;
 public class LoginInterceptor implements HandlerInterceptor {
 	@Autowired
 	private UserService userService;
+	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
+
 		UserVo authUser = userService.getUser(id, password);
 		
-		if (authUser == null) {
+		if(authUser == null) {
 			request.setAttribute("id", id);
-			request.getRequestDispatcher("/WEB-INF/views/user/login.jsp");
+			request
+				.getRequestDispatcher("/WEB-INF/views/user/login.jsp")
+				.forward(request, response);
+			
 			return false;
 		}
+		
 		HttpSession session = request.getSession(true);
 		session.setAttribute("authUser", authUser);
-		System.out.println(authUser);
 		response.sendRedirect(request.getContextPath());
+		
 		return false;
 	}
-
 }

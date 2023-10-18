@@ -1,4 +1,4 @@
-package com.poscodx.config.web;
+package com.poscodx.jblog.config.web;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,9 +18,6 @@ public class MVCConfig implements WebMvcConfigurer{
 		viewResolver.setViewClass(JstlView.class);
 		viewResolver.setPrefix("/WEB-INF/views/");
 		viewResolver.setSuffix(".jsp");
-		viewResolver.setExposeContextBeansAsAttributes(true);
-		viewResolver.setExposedContextBeanNames("site");
-
 		return viewResolver;
 	}
 

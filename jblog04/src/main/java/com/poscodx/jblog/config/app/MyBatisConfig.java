@@ -1,4 +1,4 @@
-package com.poscodx.config.app;
+package com.poscodx.jblog.config.app;
 
 import javax.sql.DataSource;
 
@@ -16,7 +16,7 @@ public class MyBatisConfig {
 	public SqlSessionFactory sqlSessionFactory(DataSource dataSource, ApplicationContext applicationContext) throws Exception {
 		SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
 		sqlSessionFactory.setDataSource(dataSource);
-		sqlSessionFactory.setConfigLocation(applicationContext.getResource("classpath:com/poscodx/mysite/config/app/mybatis/configuration.xml"));
+		sqlSessionFactory.setConfigLocation(applicationContext.getResource("classpath:com/poscodx/jblog/config/app/mybatis/configuration.xml"));
 
 		return sqlSessionFactory.getObject();
 	}

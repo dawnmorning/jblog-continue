@@ -45,7 +45,7 @@
 		$("#btn-checkid").click(function() {
 			let userId = $("#blog-id").val();
 			$.ajax({
-				url : "/jblog03/user/checkId",
+				url : "/jblog04/user/checkId",
 				type : "GET",
 				data : {
 					"id" : userId

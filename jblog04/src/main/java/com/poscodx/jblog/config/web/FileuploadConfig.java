@@ -1,4 +1,4 @@
-package com.poscodx.config.web;
+package com.poscodx.jblog.config.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc
-@PropertySource("classpath:com/poscodx/mysite/config/web/fileupload.properties")
+@PropertySource("classpath:com/poscodx/jblog/config/web/fileupload.properties")
 public class FileuploadConfig implements WebMvcConfigurer {
 	@Autowired
 	private Environment env;
